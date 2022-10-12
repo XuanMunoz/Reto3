@@ -1,0 +1,26 @@
+package com.g15.jpa.service;
+
+import com.g15.jpa.entity.Score;
+
+import com.g15.jpa.repository.ScoreRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author desaextremo
+ */
+@Service
+public class ScoreService {
+    @Autowired
+    private ScoreRepository scoreRepository;
+    
+    public List<Score> getScore(){
+	return scoreRepository.findAll();
+    }
+    
+    public Score insertScore(Score score){
+	return scoreRepository.save(score);
+    }
+}
